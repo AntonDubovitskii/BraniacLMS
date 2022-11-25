@@ -1,5 +1,6 @@
 from django.db import migrations
 
+
 def forwards_func(apps, schema_editor):
 
     CourseTeachers = apps.get_model("mainapp", "CourseTeachers")
@@ -20,16 +21,18 @@ def forwards_func(apps, schema_editor):
 
     t.course.add(c)
 
+
 def reverse_func(apps, schema_editor):
     # Get model
     CourseTeachers = apps.get_model("mainapp", "CourseTeachers")
     # Delete objects
     CourseTeachers.objects.all().delete()
 
+
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('mainapp', '0005_teachers_migration'),
+        ("mainapp", "0005_teachers_migration"),
     ]
 
     operations = [
